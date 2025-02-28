@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+  todoDb:
+    image: postgres:15.3
+    container_name: todo-todoDb
+    ports:
+      - "5433:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - ./postgres:/var/lib/postgresql/data
