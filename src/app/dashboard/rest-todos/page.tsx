@@ -1,11 +1,21 @@
-import React from 'react'
+import TodosGrid from "@/app/todos/components/TodosGrid";
+import prisma from "@/lib/prisma";
+import React from "react";
 
-const TodoPage = () => {
+export const metadata = {
+  title: "Todos items",
+  description: "Todos items",
+};
+
+const TodoPage = async () => {
+  const todos = await prisma.todo.findMany({ orderBy: { description: "asc" } });
+
+
   return (
     <div>
-      <p className="text-3xl">TodoPage</p>
+      <TodosGrid todos={todos} />
     </div>
-  )
-}
+  );
+};
 
-export default TodoPage
+export default TodoPage;

@@ -1,10 +1,12 @@
-import React from 'react'
+import WidwetItem from "@/components/WidwetItem";
+import React from "react";
 
-
-const DashboardPage = () => {
+const TodoPage = () => {
   return (
-    <p>Dashboard</p> 
-  )
-}
+    <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <WidwetItem />
+    </div>
+  );
+};
 
-export default DashboardPage
+export default TodoPage;
