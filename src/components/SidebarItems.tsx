@@ -13,6 +13,9 @@ const SidebarItems = ( { icon, path, title } : Props) => {
 
   const pathName = usePathname()
 
+  console.log(pathName)
+  console.log(path , "Este es el path")
+
 
   return (
       <li>

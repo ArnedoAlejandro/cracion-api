@@ -19,7 +19,7 @@ import { IoCafeOutline, IoCheckboxOutline } from "react-icons/io5";
     },
     {
       icon: <IoCafeOutline size={30} />,
-      path: "dashboard/server-todos",
+      path: "/dashboard/server-todos",
       title: "Server Action",
     },
   ]

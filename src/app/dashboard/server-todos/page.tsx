@@ -2,7 +2,6 @@
 export const dynamic = "force-dynamic"
 export const revalidate = 0
 
-
 import { NewTodo } from "@/app/todos/components/NewTodo";
 import TodosGrid from "@/app/todos/components/TodosGrid";
 import prisma from "@/lib/prisma";
@@ -13,17 +12,20 @@ export const metadata = {
   description: "Todos items",
 };
 
-const TodoPage = async () => {
+const ServerTodoPage = async () => {
 
   const todos = await prisma.todo.findMany({ orderBy: { description: "asc" } });
 
 
   return (
-    <div className="grid gap-6 p-4 ">
-      <NewTodo/>
-      <TodosGrid todos={todos} />
-    </div>
+    <>
+      <span className="text-2xl m-9">Server actions</span>
+      <div className="grid gap-6 p-4 ">
+        <NewTodo/>
+        <TodosGrid todos={todos} />
+      </div>
+    </>
   );
 };
 
-export default TodoPage;
+export default ServerTodoPage;
